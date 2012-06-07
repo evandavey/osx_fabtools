@@ -1,6 +1,23 @@
 Introduction
 ============
 
+This fork adds OSX specifc fabtools
+
+* books - for a calibre ebook server
+
+* user_osx - for osx specific user management commands
+
+* launchctl - for osx launch daemons
+
+* templates - for osx specific templates
+
+* gitserver - for git, gitolite and gitlabhq on osx
+
+* homebrew - for the Homebrew package manager
+
+* ruby - for installation and management via RVM
+
+
 ``fabtools`` includes useful functions to help you write your `Fabric <http://fabfile.org/>`_ files.
 
 ``fabtools`` makes it easier to manage system users, packages, databases, etc.
