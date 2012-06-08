@@ -2,7 +2,15 @@
 Idempotent API for managing users
 """
 from fabtools.files import is_file
-from fabtools.user import *
+import sys
+
+
+#import osx specific user functionss
+if sys.platform == 'darwin':
+    from fabtools.user_osx import *
+else:
+    from fabtools.user import *
+    
 
 import fabtools.require
 
@@ -12,6 +20,7 @@ def user(name, home=None):
     Require a user
     """
     if not exists(name):
+        warn('%(name)s does not exist, creating' % locals())
         create(name, home=home)
     if home:
         fabtools.require.directory(home, owner=name, use_sudo=True)
